@@ -44,7 +44,7 @@ const util_1 = require("./util/util");
         try {
             const filepath = yield util_1.filterImageFromURL(url);
             console.log(filepath);
-            res.sendFile(filepath, () => util_1.deleteLocalFiles([filepath]));
+            res.sendStatus(200).sendFile(filepath, () => util_1.deleteLocalFiles([filepath]));
         }
         catch (error) {
             res.sendStatus(422);
